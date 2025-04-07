@@ -34,7 +34,8 @@ public struct SegmentButtonsView: View {
 
     public var body: some View {
         GeometryReader { geometry in
-            let totalWidth = geometry.size.width - 32
+            let horizontalPadding: CGFloat = 16
+            let totalWidth = geometry.size.width - horizontalPadding * 2
             let unitWidth = totalWidth / 5
             let spacing: CGFloat = 8
 
@@ -65,7 +66,7 @@ public struct SegmentButtonsView: View {
                     .buttonStyle(.plain)
                 }
             }
-            .padding(.horizontal, spacing)
+            .padding(.horizontal, horizontalPadding) // ✅ 左右对称
         }
         .frame(height: 60)
     }
