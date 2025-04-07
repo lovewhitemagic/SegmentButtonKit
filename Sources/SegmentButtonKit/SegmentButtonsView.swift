@@ -35,9 +35,10 @@ public struct SegmentButtonsView: View {
     public var body: some View {
         GeometryReader { geometry in
             let horizontalPadding: CGFloat = 16
-            let totalWidth = geometry.size.width - horizontalPadding * 2
-            let unitWidth = totalWidth / 5
             let spacing: CGFloat = 8
+            let totalSpacing = spacing * CGFloat(items.count - 1)
+            let totalWidth = geometry.size.width - horizontalPadding * 2 - totalSpacing
+            let unitWidth = totalWidth / 5
 
             HStack(spacing: spacing) {
                 ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
@@ -66,7 +67,7 @@ public struct SegmentButtonsView: View {
                     .buttonStyle(.plain)
                 }
             }
-            .padding(.horizontal, horizontalPadding) // ✅ 左右对称
+            .padding(.horizontal, horizontalPadding)
         }
         .frame(height: 60)
     }
