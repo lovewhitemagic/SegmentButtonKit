@@ -14,13 +14,10 @@
 
 ## 📦 安装方式（Swift Package Manager）
 
-```text
-https://github.com/lovewhitemagic/SegmentButtonKit.git
-
 
 在 Xcode 中选择 `File > Add Packages...`，输入上方地址即可。
 
----
+
 
 ## 🚀 使用示例
 
@@ -45,7 +42,7 @@ struct ExampleView: View {
         )
     }
 }
-
+```
 
 
 ## 💡 使用场景
